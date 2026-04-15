@@ -8,21 +8,20 @@
 
   <style>
     :root {
-      --bg:        #2b1055;
-      --surface:   #111520;
-      --brand:     #8A2BE2;
+      --bg:          #2b1055;
+      --surface:     #111520;
+      --brand:       #8A2BE2;
       --brand-light: #b06ef3;
-      --text:      #eef1f5;
-      --muted:     #aab3c5;
-      --success:   #10b981;
-      --warning:   #f59e0b;
-      --border:    #1b2230;
-      --radius:    12px;
-      --radius-lg: 20px;
+      --text:        #eef1f5;
+      --muted:       #aab3c5;
+      --success:     #10b981;
+      --warning:     #f59e0b;
+      --border:      #1b2230;
+      --radius:      12px;
+      --radius-lg:   20px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -55,11 +54,7 @@
       background-clip: text;
       letter-spacing: -0.5px;
     }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
@@ -123,7 +118,28 @@
       gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 28px;
     }
+
+    /* App Store badge */
+    .appstore-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #000;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .appstore-badge:hover { opacity: 0.85; }
+    .appstore-badge svg { width: 24px; height: 24px; flex-shrink: 0; }
+    .appstore-badge-text { text-align: left; }
+    .appstore-badge-text small { display: block; font-size: 0.65rem; color: rgba(255,255,255,0.7); letter-spacing: 0.3px; }
+    .appstore-badge-text strong { display: block; font-size: 1rem; font-weight: 700; line-height: 1.1; }
+
     .btn-primary {
       background: var(--brand);
       color: #fff;
@@ -164,16 +180,8 @@
       margin-top: 64px;
       flex-wrap: wrap;
     }
-    .hero-stat strong {
-      display: block;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--brand-light);
-    }
-    .hero-stat span {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+    .hero-stat strong { display: block; font-size: 2rem; font-weight: 900; color: var(--brand-light); }
+    .hero-stat span { font-size: 0.85rem; color: var(--muted); }
 
     /* ─── SECTION SHARED ─── */
     section { padding: 80px 24px; }
@@ -192,11 +200,7 @@
       letter-spacing: -0.8px;
       margin-bottom: 16px;
     }
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 600px;
-    }
+    .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 600px; }
 
     /* ─── FEATURES ─── */
     .features-grid {
@@ -212,31 +216,17 @@
       padding: 28px;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .feature-card:hover {
-      border-color: rgba(138,43,226,0.5);
-      transform: translateY(-3px);
-    }
+    .feature-card:hover { border-color: rgba(138,43,226,0.5); transform: translateY(-3px); }
     .feature-icon {
-      width: 48px;
-      height: 48px;
+      width: 48px; height: 48px;
       background: rgba(138,43,226,0.15);
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 1.5rem;
       margin-bottom: 18px;
     }
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .feature-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
 
     /* ─── HOW IT WORKS ─── */
     .steps {
@@ -244,25 +234,14 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 24px;
       margin-top: 52px;
-      counter-reset: step;
     }
-    .step {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      position: relative;
-    }
+    .step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
     .step-number {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       background: var(--brand);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.9rem;
       margin-bottom: 16px;
     }
     .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
@@ -270,13 +249,7 @@
 
     /* ─── CONVERSION TABLES ─── */
     .tables-section { background: rgba(17, 21, 32, 0.6); }
-    .tables-nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 36px;
-      margin-bottom: 32px;
-    }
+    .tables-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 36px; margin-bottom: 32px; }
     .tab-btn {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -288,49 +261,28 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--brand);
-      color: #fff;
-      border-color: var(--brand);
-    }
+    .tab-btn.active, .tab-btn:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
     .table-panel { display: none; }
     .table-panel.active { display: block; }
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.88rem;
-      min-width: 520px;
-    }
-    thead tr {
-      background: rgba(138,43,226,0.2);
-    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 520px; }
+    thead tr { background: rgba(138,43,226,0.2); }
     th {
       padding: 12px 16px;
       text-align: left;
-      font-weight: 700;
-      font-size: 0.78rem;
+      font-weight: 700; font-size: 0.78rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--brand-light);
       border-bottom: 1px solid var(--border);
     }
-    td {
-      padding: 11px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
+    td { padding: 11px 16px; border-bottom: 1px solid var(--border); color: var(--text); }
     tbody tr:hover { background: rgba(138,43,226,0.06); }
     tbody tr:last-child td { border-bottom: none; }
-    .size-highlight {
-      font-weight: 700;
-      color: var(--brand-light);
-    }
+    .size-highlight { font-weight: 700; color: var(--brand-light); }
     .table-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 14px;
-      padding: 12px 16px;
+      font-size: 0.8rem; color: var(--muted);
+      margin-top: 14px; padding: 12px 16px;
       background: rgba(138,43,226,0.07);
       border-left: 3px solid var(--brand);
       border-radius: 0 8px 8px 0;
@@ -344,11 +296,8 @@
       margin-top: 40px;
     }
     .region-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 16px;
-      text-align: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 16px; text-align: center;
       transition: border-color 0.2s;
     }
     .region-card:hover { border-color: var(--brand); }
@@ -374,45 +323,26 @@
       background: radial-gradient(circle, rgba(138,43,226,0.3), transparent 70%);
       pointer-events: none;
     }
-    .premium-card h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-    .premium-card p {
-      color: var(--muted);
-      margin-bottom: 32px;
-      font-size: 1.05rem;
-    }
+    .premium-card h2 { font-size: 2rem; font-weight: 900; margin-bottom: 12px; }
     .premium-features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 14px;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       text-align: left;
     }
     .premium-feature {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      display: flex; align-items: center; gap: 12px;
       background: rgba(17,21,32,0.5);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 12px 16px;
       font-size: 0.9rem;
     }
-    .premium-feature .check {
-      color: var(--success);
-      font-weight: 900;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
+    .premium-feature .check { color: var(--success); font-weight: 900; font-size: 1rem; flex-shrink: 0; }
     .price-row {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
+      display: flex; gap: 20px; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 24px;
     }
     .price-tag {
       background: rgba(17,21,32,0.6);
@@ -425,6 +355,32 @@
     .price-tag span { font-size: 0.8rem; color: var(--muted); }
     .price-tag.featured { border-color: var(--warning); }
     .price-tag.featured strong { color: var(--warning); }
+
+    /* Apple subscription disclosure */
+    .subscription-disclosure {
+      background: rgba(17,21,32,0.7);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 24px;
+      text-align: left;
+    }
+    .subscription-disclosure h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--brand-light);
+      margin-bottom: 10px;
+    }
+    .subscription-disclosure p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .subscription-disclosure p:last-child { margin-bottom: 0; }
+    .subscription-disclosure a { color: var(--brand-light); text-decoration: underline; }
 
     /* ─── DISCLAIMER ─── */
     .disclaimer-box {
@@ -439,11 +395,31 @@
     }
     .disclaimer-box strong { color: var(--text); }
 
-    /* ─── FOOTER ─── */
-    footer {
+    /* ─── PRIVACY SECTION ─── */
+    .privacy-section {
       background: var(--surface);
       border-top: 1px solid var(--border);
       padding: 40px 24px;
+    }
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .privacy-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+    }
+    .privacy-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; }
+    .privacy-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0a0d14;
+      border-top: 1px solid var(--border);
+      padding: 40px 24px 24px;
       text-align: center;
     }
     .footer-logo {
@@ -456,9 +432,19 @@
       margin-bottom: 8px;
     }
     .footer-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
     .footer-links a { color: var(--muted); font-size: 0.85rem; text-decoration: none; }
     .footer-links a:hover { color: var(--text); }
+    .footer-legal {
+      font-size: 0.73rem;
+      color: rgba(170,179,197,0.55);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    .footer-legal a { color: rgba(170,179,197,0.7); text-decoration: underline; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
@@ -481,39 +467,43 @@
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#conversions">Size Guide</a></li>
     <li><a href="#premium">Premium</a></li>
+    <li><a href="#privacy">Privacy</a></li>
   </ul>
   <a href="#premium" class="nav-badge">Try Free</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
 <header class="hero">
-  <div class="hero-tag">✦ Available on iOS &amp; iPadOS</div>
+  <div class="hero-tag">✦ Available on iPhone &amp; iPad</div>
   <h1>Your size, across<br><span>every brand.</span></h1>
   <p class="hero-sub">
     MiSizura compares your measurements against real brand size charts so you always know which size to pick — no more returns, no more guessing.
   </p>
+
   <div class="hero-cta">
     <a href="#features" class="btn-primary">&#9654; Explore Features</a>
     <a href="#conversions" class="btn-outline">📏 Size Conversion Guide</a>
   </div>
 
+  <!-- App Store badge — replace href with your actual App Store URL -->
+  <div style="margin-top:16px;">
+    <a href="https://apps.apple.com" class="appstore-badge" aria-label="Download MiSizura on the App Store">
+      <!-- Apple glyph -->
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.78M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      <div class="appstore-badge-text">
+        <small>Download on the</small>
+        <strong>App Store</strong>
+      </div>
+    </a>
+  </div>
+
   <div class="hero-stats">
-    <div class="hero-stat">
-      <strong>100+</strong>
-      <span>Brands covered</span>
-    </div>
-    <div class="hero-stat">
-      <strong>8</strong>
-      <span>Global regions</span>
-    </div>
-    <div class="hero-stat">
-      <strong>5</strong>
-      <span>Clothing hubs</span>
-    </div>
-    <div class="hero-stat">
-      <strong>∞</strong>
-      <span>Profiles (Premium)</span>
-    </div>
+    <div class="hero-stat"><strong>100+</strong><span>Brands covered</span></div>
+    <div class="hero-stat"><strong>8</strong><span>Global regions</span></div>
+    <div class="hero-stat"><strong>5</strong><span>Clothing hubs</span></div>
+    <div class="hero-stat"><strong>∞</strong><span>Profiles (Premium)</span></div>
   </div>
 </header>
 
@@ -525,61 +515,51 @@
     <p class="section-sub">From a quick size lookup to full measurement-based matching, MiSizura covers every type of shopping — online and second-hand.</p>
 
     <div class="features-grid">
-
       <div class="feature-card">
         <div class="feature-icon">🤖</div>
         <h3>AI Size Finder</h3>
         <p>Enter your measurements once. The AI Size Finder searches hundreds of brand size charts and returns your predicted size for that specific brand — not a generic conversion.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">⭐</div>
         <h3>My Accurate Sizes</h3>
         <p>Browse all the brands MiSizura knows about and see your predicted size for each one at a glance. Filter by category, fit type, height type and region.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">👙</div>
         <h3>Bra Hub</h3>
         <p>Filter bra brands by band size, cup size and fit type (Standard, Sports, Plus, Maternity) to instantly see which brands carry your exact bra size across all regions.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">👟</div>
         <h3>Shoe Hub</h3>
         <p>Find shoe brands that stock your size in UK, US, EU or AUS sizing. Separate sections for women's and men's footwear with full foot-length reference data.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">🏊</div>
         <h3>Swimwear Hub</h3>
         <p>Dedicated swimwear sizing by brand — because swimwear sizing is notoriously inconsistent. Filter by fit type and region to find the right brand for your shape.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">📊</div>
         <h3>MiStats &amp; Weight Tracking</h3>
         <p>Log your weight over time and visualise your journey. MiStats shows your progress with a clean graph, start/current/target weights, and total change at a glance.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">👤</div>
         <h3>Multiple Profiles</h3>
         <p>Create profiles for yourself, friends or family — each with their own measurements, body type and weight log. Perfect for shopping as a gift too.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">☁️</div>
         <h3>iCloud Sync</h3>
         <p>All your profiles and weight entries sync automatically across your iPhone, iPad and other Apple devices via iCloud — no account needed.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">🌍</div>
         <h3>8 Global Regions</h3>
         <p>Switch between UK, US, EU, Canada, Australia, New Zealand, China and All Regions. Size displays adapt to your chosen region throughout the entire app.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -644,21 +624,19 @@
     <p class="section-sub">Use these tables as a starting point — MiSizura goes further by matching your actual measurements to each brand's own size chart.</p>
 
     <div class="tables-nav">
-      <button class="tab-btn active" onclick="showTab('womens')">Women's Clothing</button>
-      <button class="tab-btn" onclick="showTab('mens')">Men's Clothing</button>
-      <button class="tab-btn" onclick="showTab('bra-band')">Bra Band</button>
-      <button class="tab-btn" onclick="showTab('bra-cup')">Bra Cup</button>
-      <button class="tab-btn" onclick="showTab('shoes-women')">Women's Shoes</button>
-      <button class="tab-btn" onclick="showTab('shoes-men')">Men's Shoes</button>
+      <button class="tab-btn active" onclick="showTab('womens', this)">Women's Clothing</button>
+      <button class="tab-btn" onclick="showTab('mens', this)">Men's Clothing</button>
+      <button class="tab-btn" onclick="showTab('bra-band', this)">Bra Band</button>
+      <button class="tab-btn" onclick="showTab('bra-cup', this)">Bra Cup</button>
+      <button class="tab-btn" onclick="showTab('shoes-women', this)">Women's Shoes</button>
+      <button class="tab-btn" onclick="showTab('shoes-men', this)">Men's Shoes</button>
     </div>
 
     <!-- Women's Clothing -->
     <div id="tab-womens" class="table-panel active">
       <div class="table-scroll">
         <table>
-          <thead><tr>
-            <th>UK</th><th>US</th><th>EU</th><th>AUS</th><th>Bust (in)</th><th>Waist (in)</th><th>Hips (in)</th>
-          </tr></thead>
+          <thead><tr><th>UK</th><th>US</th><th>EU</th><th>AUS</th><th>Bust (in)</th><th>Waist (in)</th><th>Hips (in)</th></tr></thead>
           <tbody>
             <tr><td class="size-highlight">4</td><td>0</td><td>32</td><td>8</td><td>31.5</td><td>23.5</td><td>33.5</td></tr>
             <tr><td class="size-highlight">6</td><td>2</td><td>34</td><td>10</td><td>32.5</td><td>24.5</td><td>34.5</td></tr>
@@ -682,9 +660,7 @@
     <div id="tab-mens" class="table-panel">
       <div class="table-scroll">
         <table>
-          <thead><tr>
-            <th>UK/US</th><th>EU</th><th>Chest (in)</th><th>Waist (in)</th><th>Label</th>
-          </tr></thead>
+          <thead><tr><th>UK/US</th><th>EU</th><th>Chest (in)</th><th>Waist (in)</th><th>Label</th></tr></thead>
           <tbody>
             <tr><td class="size-highlight">34</td><td>44</td><td>34</td><td>28</td><td>XS</td></tr>
             <tr><td class="size-highlight">36</td><td>46</td><td>36</td><td>30</td><td>S</td></tr>
@@ -704,9 +680,7 @@
     <div id="tab-bra-band" class="table-panel">
       <div class="table-scroll">
         <table>
-          <thead><tr>
-            <th>UK (in)</th><th>US (in)</th><th>EU (cm)</th><th>AUS</th><th>Underbust approx (in)</th>
-          </tr></thead>
+          <thead><tr><th>UK (in)</th><th>US (in)</th><th>EU (cm)</th><th>AUS</th><th>Underbust approx (in)</th></tr></thead>
           <tbody>
             <tr><td class="size-highlight">28</td><td>28</td><td>60</td><td>6</td><td>24–25</td></tr>
             <tr><td class="size-highlight">30</td><td>30</td><td>65</td><td>8</td><td>26–27</td></tr>
@@ -728,9 +702,7 @@
     <div id="tab-bra-cup" class="table-panel">
       <div class="table-scroll">
         <table>
-          <thead><tr>
-            <th>Cup</th><th>UK</th><th>US</th><th>EU / FR</th><th>Bust − Underbust (in)</th>
-          </tr></thead>
+          <thead><tr><th>Cup</th><th>UK</th><th>US</th><th>EU / FR</th><th>Bust − Underbust (in)</th></tr></thead>
           <tbody>
             <tr><td class="size-highlight">AA</td><td>AA</td><td>AA</td><td>AA</td><td>&lt; 1</td></tr>
             <tr><td class="size-highlight">A</td><td>A</td><td>A</td><td>A</td><td>1</td></tr>
@@ -754,9 +726,7 @@
     <div id="tab-shoes-women" class="table-panel">
       <div class="table-scroll">
         <table>
-          <thead><tr>
-            <th>UK</th><th>US</th><th>EU</th><th>AUS</th><th>Foot Length (cm)</th>
-          </tr></thead>
+          <thead><tr><th>UK</th><th>US</th><th>EU</th><th>AUS</th><th>Foot Length (cm)</th></tr></thead>
           <tbody>
             <tr><td class="size-highlight">2</td><td>4</td><td>35</td><td>4</td><td>21.5</td></tr>
             <tr><td class="size-highlight">2.5</td><td>4.5</td><td>35.5</td><td>4.5</td><td>21.8</td></tr>
@@ -783,9 +753,7 @@
     <div id="tab-shoes-men" class="table-panel">
       <div class="table-scroll">
         <table>
-          <thead><tr>
-            <th>UK</th><th>US</th><th>EU</th><th>AUS</th><th>Foot Length (cm)</th>
-          </tr></thead>
+          <thead><tr><th>UK</th><th>US</th><th>EU</th><th>AUS</th><th>Foot Length (cm)</th></tr></thead>
           <tbody>
             <tr><td class="size-highlight">5</td><td>6</td><td>38.5</td><td>6</td><td>24.0</td></tr>
             <tr><td class="size-highlight">5.5</td><td>6.5</td><td>39</td><td>6.5</td><td>24.3</td></tr>
@@ -816,8 +784,8 @@
   <div class="container">
     <div class="premium-card">
       <p class="section-label" style="margin-bottom:12px;">👑 MiSizura Premium</p>
-      <h2>Start your 2-month free trial</h2>
-      <p>Full access to every feature — no limits, no locked brands, no compromises.</p>
+      <h2 class="section-title">Start your 2-month free trial</h2>
+      <p style="color:var(--muted); margin-bottom:32px; font-size:1.05rem;">Full access to every feature — no limits, no locked brands, no compromises.</p>
 
       <div class="premium-features">
         <div class="premium-feature"><span class="check">✓</span> AI Size Finder — all brands</div>
@@ -842,7 +810,21 @@
       <a href="#" class="btn-primary" style="font-size:1.05rem; padding:16px 40px;">
         &#9654;&nbsp; Start 2-Month Free Trial
       </a>
-      <p style="font-size:0.8rem; color:var(--muted); margin-top:14px;">Then auto-renews at your chosen plan. Cancel before trial ends to pay nothing.</p>
+      <p style="font-size:0.8rem; color:var(--muted); margin-top:14px;">2 months free, then auto-renews. Cancel before trial ends and you won't be charged.</p>
+
+      <!-- Apple-required subscription disclosure -->
+      <div class="subscription-disclosure">
+        <h4>Subscription Terms</h4>
+        <p>MiSizura Premium is an auto-renewing subscription. A 2-month free trial is available for new subscribers only. After the free trial period, your subscription will automatically renew unless cancelled at least 24 hours before the end of the trial or current subscription period.</p>
+        <p>Payment will be charged to your Apple ID account at confirmation of purchase, or at the end of the free trial period if not cancelled beforehand. Your account will be charged for renewal within 24 hours prior to the end of the current subscription period.</p>
+        <p><strong>Monthly:</strong> £1.99/month &nbsp;|&nbsp; <strong>Annual:</strong> £19.99/year. Prices shown are for UK App Store. Prices may vary by country and are subject to change.</p>
+        <p>You can manage or cancel your subscription at any time in your <strong>iPhone or iPad Settings → [Your Name] → Subscriptions</strong>, or via the App Store. Cancelling stops future charges but does not refund any unused portion of the current period.</p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a>
+          &nbsp;·&nbsp;
+          <a href="terms.html">Terms of Use</a>
+        </p>
+      </div>
     </div>
 
     <div class="disclaimer-box">
@@ -851,28 +833,72 @@
   </div>
 </section>
 
+<!-- ═══ PRIVACY &amp; DATA ═══ -->
+<section id="privacy" class="privacy-section">
+  <div class="container">
+    <p class="section-label">Your data</p>
+    <h2 class="section-title">Privacy by design</h2>
+    <p class="section-sub">MiSizura is built to keep your personal measurements private. Here's exactly what we collect and why.</p>
+
+    <div class="privacy-grid">
+      <div class="privacy-card">
+        <h4>📱 Stored on Your Device</h4>
+        <p>Your profiles, measurements and weight log are stored on your device and synced via your personal iCloud account. We do not have access to this data.</p>
+      </div>
+      <div class="privacy-card">
+        <h4>🚫 No Account Required</h4>
+        <p>MiSizura requires no email address, account creation or login. Your data belongs only to you.</p>
+      </div>
+      <div class="privacy-card">
+        <h4>🔒 iCloud Encryption</h4>
+        <p>Data synced via iCloud is protected by Apple's iCloud encryption. Apple's privacy policy applies to iCloud storage.</p>
+      </div>
+      <div class="privacy-card">
+        <h4>📊 No Analytics Tracking</h4>
+        <p>We do not collect behavioural analytics, sell your data to third parties, or share your measurements with brands or advertisers.</p>
+      </div>
+      <div class="privacy-card">
+        <h4>💳 Subscription via Apple</h4>
+        <p>All payments are processed by Apple through the App Store. We never see your payment details. Apple's purchase privacy policy applies.</p>
+      </div>
+      <div class="privacy-card">
+        <h4>📄 Full Policy</h4>
+        <p>Read our complete <a href="privacy.html" style="color:var(--brand-light);">Privacy Policy</a> and <a href="terms.html" style="color:var(--brand-light);">Terms of Use</a> for full details of data handling and your rights.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-logo">MiSizura</div>
   <p class="footer-sub">Smart size matching for every body.</p>
+
   <div class="footer-links">
     <a href="#features">Features</a>
     <a href="#conversions">Size Guide</a>
     <a href="#premium">Premium</a>
+    <a href="#privacy">Privacy</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <!-- Replace with your actual App Store URL -->
+    <a href="https://apps.apple.com">App Store</a>
   </div>
-  <p style="margin-top:24px; font-size:0.78rem; color:var(--muted);">
-    &copy; 2026 MiSizura. All rights reserved. Available on the App Store for iPhone &amp; iPad.
-  </p>
+
+  <div class="footer-legal">
+    <p>Apple, the Apple logo, iPhone, iPad, iPadOS and iCloud are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p>
+    <p style="margin-top:8px;">MiSizura is an independent application and is not affiliated with, sponsored by, or endorsed by Apple Inc. or any clothing brand featured within the app. Brand size charts are used for reference purposes only.</p>
+    <p style="margin-top:8px;">Prices shown are in GBP and apply to the UK App Store. Subscription prices may vary by country. All prices are inclusive of applicable taxes where required by law.</p>
+    <p style="margin-top:8px;">&copy; 2026 MiSizura. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
-  function showTab(id) {
-    // Hide all panels
+  function showTab(id, btn) {
     document.querySelectorAll('.table-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    // Show selected
     document.getElementById('tab-' + id).classList.add('active');
-    event.target.classList.add('active');
+    btn.classList.add('active');
   }
 </script>
 
